@@ -10,4 +10,3 @@ spl_autoload_register(function (string $class) {
 
 session_start();
 
-new Fw\Core\Test();
