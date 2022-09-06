@@ -4,9 +4,12 @@ namespace Fw\core;
 
 class Application
 {
+    /**
+     * @var null
+     */
+    private static $instance = null;
     private $__components = [];
     private $pager = null;
-    private $instance = null;
     private $template = null;
 
     private function __construct()
@@ -15,7 +18,7 @@ class Application
 
     public function getInstance()
     {
-        if (is_null(self::$instance)) {
+        if (!Application::$instance) {
             self::$instance = new self();
         }
         return self::$instance;

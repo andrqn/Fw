@@ -1,5 +1,7 @@
 <?php
 
+
+
 spl_autoload_register(function (string $class) {
     echo "try load $class" . PHP_EOL;
     $path = __DIR__ . "/../{$class}" . ".php";
@@ -9,4 +11,6 @@ spl_autoload_register(function (string $class) {
 });
 
 session_start();
+
+
 
