@@ -1,8 +1,8 @@
 <?php
 
-namespace Fw\Core;
+namespace core;
 
-class application
+class Application
 {
     /**
      * @var null
