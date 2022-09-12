@@ -1,8 +1,8 @@
 <?php
 
-namespace Fw\Core;
+namespace core;
 
-class route
+class Route
 {
 
 }
