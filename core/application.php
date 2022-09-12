@@ -2,7 +2,7 @@
 
 namespace core;
 
-class application
+class Application
 {
     /**
      * @var null
