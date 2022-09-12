@@ -1,8 +1,8 @@
 <?php
 
-namespace Fw\core;
+namespace Fw\Core;
 
-class Application
+class application
 {
     /**
      * @var null
@@ -18,7 +18,7 @@ class Application
 
     public function getInstance()
     {
-        if (!Application::$instance) {
+        if (!application::$instance) {
             self::$instance = new self();
         }
         return self::$instance;
