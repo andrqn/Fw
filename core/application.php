@@ -4,9 +4,7 @@ namespace core;
 
 class Application
 {
-    /**
-     * @var null
-     */
+   
     private static $instance = null;
     private $__components = [];
     private $pager = null;
@@ -18,7 +16,7 @@ class Application
 
     public function getInstance()
     {
-        if (!application::$instance) {
+        if (!Application::$instance) {
             self::$instance = new self();
         }
         return self::$instance;
