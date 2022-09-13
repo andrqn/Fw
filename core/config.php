@@ -5,8 +5,6 @@ namespace core;
 class Config
 {
     private static $config;
-    private static $items;
-
 
     public function __construct()
     {
