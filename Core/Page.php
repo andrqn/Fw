@@ -7,8 +7,8 @@ use traits\Singletone;
 class Page
 {
     private array $property;
-    public array $srcContainer;
-    public array $cssContainer;
+    private array $srcContainer;
+    private array $cssContainer;
     private array $stringContainer;
     use Singletone;
 
@@ -57,16 +57,19 @@ class Page
 
     }
 
-    public function getAllReplace()
+    public function getAllReplace(): array
     {
+        $replaceContainer = [];
+        $replaceContainer = array_merge($this->srcContainer, $this->cssContainer, $this->stringContainer);
+        return $replaceContainer;
 
     }
 
-    public function showHead($js, $css, $str)
+    public  function showHead()
     {
-        echo $this->stringContainer["$js"];
-        echo $this->cssContainer["$css"];
-        echo $this->stringContainer["$str"];
+        echo $this->srcContainer['src'] . "\n";
+        echo $this->cssContainer['link'] . "\n";
+        echo $this->stringContainer['str'] . "\n";
 
     }
 

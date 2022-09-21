@@ -16,7 +16,7 @@ class Application
 
     private $__components = [];
     public Page $pager;
-    private $template = null;
+    private $template ;
 
     private function __construct()
     {
