@@ -22,8 +22,9 @@ class Config
             return "Path not found";
         } else {
             $path = explode("/", $path);
-            return static::$config[$path[0]][$path[1]];
+            self::$config = self::$config[$path[0]][$path[1]];
         }
+        return self::$config;
     }
 
 
