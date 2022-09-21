@@ -1,29 +1,27 @@
 <?php
 
-namespace Fw\core;
+namespace core;
 
 use traits\Singletone;
 
 
 class Application
 {
-<<<<<<< Updated upstream:Core/application.php
-    /**
-     * @var null
-     */
+
+
     private static $instance = null;
-=======
+
     use Singletone;
 
->>>>>>> Stashed changes:core/Application.php
+
     private $__components = [];
-    public Page $pager ;
+    public Page $pager;
     private $template = null;
 
     private function __construct()
     {
         $this->pager = Page::getInstance();
-        $this->template = $_SERVER['DOCUMENT_ROOT'].'/template/';
+        $this->template = $_SERVER['DOCUMENT_ROOT'] . '/template/';
 
 
     }
@@ -42,8 +40,7 @@ class Application
     {
         ob_clean();
     }
-<<<<<<< Updated upstream:Core/application.php
-=======
+
 
     public function header()
     {
@@ -58,5 +55,5 @@ class Application
 
     }
 
->>>>>>> Stashed changes:core/Application.php
+
 }
