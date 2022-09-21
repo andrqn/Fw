@@ -9,14 +9,11 @@ if (!defined("CORE")) {
 define("TEMPLATE_PATH", $_SERVER['DOCUMENT_ROOT'] . 'FW/template/');
 
 
-
 spl_autoload_register(function (string $class) {
-<<<<<<< Updated upstream
     $path = __DIR__ . "/../{$class}" . ".php";
-=======
     $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
     $path = __DIR__ . "\\" . "{$class}" . ".php";
->>>>>>> Stashed changes
+
     if (file_exists($path)) {
         require_once $path;
     }

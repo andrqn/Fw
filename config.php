@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< Updated upstream
-$config["db"] = "db";
-$config["login"] = "login";
-$config["password"] = "password";
-=======
+
 return [
     "db" => [
         "login" => 'root',
@@ -14,4 +10,4 @@ return [
         'news'
     ]
 ];
->>>>>>> Stashed changes
+
