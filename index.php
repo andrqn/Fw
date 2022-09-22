@@ -7,7 +7,11 @@ if (!defined("CORE")) {
     die();
 }
 
-$app = Application::getInstance();
+
+
+$app->pager->addJs("script.js");
+$app->pager->addCss("style.css");
+$app->pager->addString("<h1>TEST</h1>");
 $app->header();
 
 
@@ -23,5 +27,6 @@ $app->header();
 
 
 <?php
+$app->pager->addString("<h6>TEST2</h6>");
 $app->footer();
 ?>
