@@ -8,10 +8,11 @@ if (!defined("CORE")) {
 }
 
 
-
+$app->pager->addString("<h1>It's Header</h1>");
 $app->pager->addJs("script.js");
 $app->pager->addCss("style.css");
-$app->pager->addString("<h1>It's Header</h1>");
+
+
 $app->header();
 
 
@@ -28,6 +29,7 @@ $app->header();
 
 
 <?php
-$app->pager->addString("<h3>It's Footer</h3>");
+$app->pager->addString("<h2>It's footer <h2/>");
+
 $app->footer();
 ?>

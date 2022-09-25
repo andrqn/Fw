@@ -34,6 +34,7 @@ class Application
     public function endBuffer()
     {
         ob_end_clean();
+
     }
 
     public function restartBuffer()
@@ -52,6 +53,15 @@ class Application
     public function footer()
     {
         require $this->template . 'news/footer.php';
+        $this->renderHtml();
+
+    }
+    public function renderHtml()
+    {
+        $content = ob_get_clean();
+        $replace = $this->pager->getAllReplace();
+        $content = str_replace(array_values($replace), array_values($replace), $content);
+        echo $content;
 
     }
 
