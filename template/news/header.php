@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Header</title>
+    <?php
 
-    <?php use core\Page;
-    include ($_SERVER['DOCUMENT_ROOT'].'/init.php');
-    $app->pager->showHead();
+    use core\Page;
+
+    Page::showHead();
     ?>
 </head>
 <body>

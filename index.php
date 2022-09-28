@@ -1,20 +1,13 @@
 <?php
 include('init.php');
 
-
-
 if (!defined("CORE")) {
     die();
 }
-
-
-$app->pager->addString("<h1>It's Header</h1>");
 $app->pager->addJs("script.js");
 $app->pager->addCss("style.css");
-
-
+$app->pager->addString("<h1>It's Header</h1>");
 $app->header();
-
 
 ?>
     <pre>
@@ -25,11 +18,12 @@ $app->header();
 -------- 22.09.2022 --------
 1) Проверка работы index c изменениями .
 2) Залита финальная версия 2 шага  на гит .
-</pre>
-
+    </pre>
 
 <?php
-$app->pager->addString("<h2>It's footer <h2/>");
 
 $app->footer();
+
+
+
 ?>

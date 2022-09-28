@@ -7,9 +7,9 @@ use traits\Singletone;
 class Page
 {
     private array $property;
-    private array $srcContainer;
-    private array $cssContainer;
-    private array $stringContainer;
+    private const JS = "#SRC#";
+    private const CSS = "#CSS#";
+    private const STR = "#STR#";
     use Singletone;
 
     public function __construct()
@@ -19,7 +19,7 @@ class Page
 
     public function addJs(string $src)
     {
-        $this->srcContainer['src'] = "<script src='{$src}'></script>";
+        $this->srcContainer[self::JS] = "<script src=$src></script>";
         $this->srcContainer = array_unique($this->srcContainer);
 
     }
@@ -27,14 +27,14 @@ class Page
     public function addCss(string $link)
 
     {
-        $this->cssContainer['link'] = "<link rel='stylesheet' href='{$link}'>";
+        $this->cssContainer[self::CSS] = "<link rel='stylesheet' href=$link>";
         $this->cssContainer = array_unique($this->cssContainer);
 
     }
 
     public function addString(string $str)
     {
-        $this->stringContainer['str'] = "$str";
+        $this->stringContainer[self::STR] = "$str";
         $this->stringContainer = array_unique($this->stringContainer);
 
     }
@@ -59,17 +59,17 @@ class Page
 
     public function getAllReplace(): array
     {
-        $replaceContainer = [];
+
         $replaceContainer = array_merge($this->srcContainer, $this->cssContainer, $this->stringContainer);
         return $replaceContainer;
 
     }
 
-    public  function showHead()
+    public static function showHead()
     {
-        echo $this->srcContainer['src'] . "\n";
-        echo $this->cssContainer['link'] . "\n";
-        echo $this->stringContainer['str'] . "\n";
+        echo self::JS . "\n";
+        echo self::CSS . "\n";
+        echo self::STR . "\n";
 
     }
 

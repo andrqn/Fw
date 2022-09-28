@@ -6,7 +6,7 @@ use core\Application;
 if (!defined("CORE")) {
     define("CORE", true);
 }
-define("TEMPLATE_PATH", $_SERVER['DOCUMENT_ROOT'] . 'FW/template/');
+
 
 
 spl_autoload_register(function (string $class) {

@@ -5,6 +5,7 @@ class Dictionary implements IteratorAggregate, ArrayAccess, Countable
 
     public function getIterator()
     {
+        return new ArrayIterator($this);
 
     }
 

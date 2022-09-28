@@ -16,12 +16,16 @@ class Application
 
     private $__components = [];
     public Page $pager;
-    private $template ;
+    private $template;
+    private Server $server;
+    private Request $request;
 
     private function __construct()
     {
         $this->pager = Page::getInstance();
         $this->template = $_SERVER['DOCUMENT_ROOT'] . '/template/';
+        /*$this->server = new Server();
+        $this->request = new Request();*/
 
 
     }
@@ -56,12 +60,29 @@ class Application
         $this->renderHtml();
 
     }
+
+    public function getServer()
+    {
+        return $this->server;
+    }
+
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    public function includeComponent(string $component, string $template, array $params)
+    {
+
+    }
+
     public function renderHtml()
     {
         $content = ob_get_clean();
         $replace = $this->pager->getAllReplace();
-        $content = str_replace(array_values($replace), array_values($replace), $content);
+        $content = str_replace(array_keys($replace), array_values($replace), $content);
         echo $content;
+
 
     }
 
